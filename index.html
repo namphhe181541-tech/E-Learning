@@ -1,192 +1,32 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi-VN" dir="ltr">
 <head>
-	<title>BAI 18- VUNG DONG NAM BO</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<meta name="generator" content="ActivePresenter 9.3.0"/>
-	<meta name="author" content="admin" />
-	<meta name="copyright" content=" " />
-	<meta name="description" content=""/>
-	<meta name="viewport" content="initial-scale=1.0">
-	<meta name="apple-mobile-web-app-capable" content="yes">
+  <meta charset="utf-8" />
+  <title>Đang chuyển đến Luyện tập…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<style>
-		body {
-			background-color: #ffffff;
-			color: #4d4d4d;
-			font-family: "Verdana";
-			margin: 0px;
-			padding: 0px;
-			display: flex;
-			flex-direction: row;
-			min-height: 100vh;
-		}
-		.ap-mode-buttons-container {
-			background-color: #29abe2;
-			min-height: 100%;
-			flex: 2;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		.ap-mode-buttons {
-			background-color: #29abe2;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			max-width: 100%;
-		}
-		.ap-mode-button {
-			background-color: transparent;
-			color: #ffffff;
-			border: none;
-			margin: 10px;
-			text-transform: uppercase;
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-		}
-		.ap-project-information-container {
-			min-height: 100%;
-			flex: 3;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		.ap-project-information {
-			font-size: 14px;
-		}
+  <!-- Chuyển hướng tức thì nếu trình duyệt không chạy JS -->
+  <meta http-equiv="refresh" content="0; url=practice.html" />
+  <link rel="canonical" href="practice.html" />
 
-		.ap-mode-button svg {
-			width: 48px;
-			height: 48px;
-			margin: 10px 20px 10px 20px;
-			display: inline-block;
-			filter: drop-shadow(2px 2px 3px #333333);
-		}
+  <script>
+    // Chuyển hướng bằng JS (ghi đè URL lịch sử để không quay lại trang index)
+    window.location.replace("practice.html");
+  </script>
 
-		.ap-mode-button:hover {
-			background-color: rgba(255, 255, 255, 0.2);
-		}
-
-		.ap-mode-button span {
-			margin: 10px 20px 10px 20px;
-			font-size: 18px;
-		}
-
-		h1 {
-			font-size: 28px;
-			font-weight: bold;
-			margin: 25px 0px 25px 0px;
-		}
-
-		.ap-project-information td {
-			padding: 5px 20px 5px 0px;
-		}
-
-		a:link {color:#4d4d4d; text-decoration:none;}
-		a:visited {color:#4d4d4d; text-decoration:none}
-		a:active {color:#4d4d4d; text-decoration:none}
-		a:hover {color:#4d4d4d; text-decoration:none}
-		
-		@media (max-width: 1024px) and (orientation: portrait) {
-			body {
-				flex-direction: column;
-			}
-			.ap-mode-buttons-container {
-				width: 100%;
-				flex: 3;
-			}
-			.ap-project-information-container {
-				width: 100%;
-				flex: 2;
-			}
-		}
-		
-		@media (max-width: 640px) and (max-height: 640px) {
-			.ap-mode-button svg {
-				width: 32px;
-				height: 32px;
-			}
-			.ap-mode-button span {
-				margin: 5px 10px 5px 10px;
-				font-size: 14px;
-			}
-			.ap-project-information {
-				font-size: 12px;
-			}
-		}
-	</style>
-
-	<script type="text/javascript">
-		var language = {"Tutorial":"Hướng dẫn","Description":"Mô tả","Author":"Tác giả","Copyright":"Bản quyền","TestIntro":"Chọn chế độ này để làm bài kiểm tra","Homepage":"Trang chủ","Practice":"Luyện tập","Test":"Kiểm tra","Demo":"Minh họa","DemoIntro":"Tự động phát bài trình chiếu","TutorialIntro":"Chế độ hướng dẫn","PracticeIntro":"Chọn chế độ này để luyện tập thêm","OpenPrezError":"Không thể mở bài trình chiếu.\nLỗi: "};
-		var PlayModes = {
-			DEMO: 1,
-			TUT: 2,
-			PRAC: 4,
-			TEST: 8
-		};
-
-		var opmodes = 7;
-		function openPrez(url, mode) {
-			var fullUrl = '' + url;
-			try {
-				var margin = 40;
-				var top = margin,
-					left = margin,
-					width = screen.availWidth - 2 * margin,
-					height = screen.availHeight - 4 * margin;
-				var styles = 'top=' + top + ',left=' + left + ',width=' + width + ',height=' + height
-					+ ',location=no,toolbar=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes';
-				var owin = window.open(encodeURI(fullUrl), '_blank', styles);
-				if (owin)
-					owin.focus();
-			}
-			catch (e) {
-				alert(language.OpenPrezError + e);
-			}
-			return false;
-		};
-		function setElementText(id, text) {
-			document.getElementById(id).innerHTML = text;
-		}
-		function setElementTitle(id, text) {
-			document.getElementById(id).setAttribute('title', text);
-		}
-		function hideElement(id) {
-			document.getElementById(id).style.display = 'none';
-		}
-
-		// ⭐ Thêm đoạn này để tự động mở "Luyện tập"
-		window.onload = function() {
-			openPrez('practice.html');
-		};
-	</script>
+  <style>
+    html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .wrap { height: 100%; display: grid; place-items: center; text-align: center; padding: 24px; }
+    a { color: #0b74de; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
-
 <body>
-	<div class="ap-mode-buttons-container">
-		<div class="ap-mode-buttons">
-			<button id="ap-mode-demo" class="ap-mode-button" onclick="openPrez('demo.html')">
-				<span id="ap-label-mode-demo">Demonstration</span>
-			</button>
-			<button id="ap-mode-tutorial" class="ap-mode-button" onclick="openPrez('tutorial.html')">
-				<span id="ap-label-mode-tutorial">Tutorial</span>
-			</button>
-			<button id="ap-mode-practice" class="ap-mode-button" onclick="openPrez('practice.html')">
-				<span id="ap-label-mode-practice">Practice</span>
-			</button>
-			<button id="ap-mode-test" class="ap-mode-button" onclick="openPrez('test.html')">
-				<span id="ap-label-mode-test">Test</span>
-			</button>
-		</div>
-	</div>
-	<div class="ap-project-information-container">
-		<div class="ap-project-information">
-			<h1>BAI 18 - VUNG DONG NAM BO</h1>
-			<p>Chọn chế độ để bắt đầu.</p>
-		</div>
-	</div>
+  <div class="wrap">
+    <div>
+      <h1>Đang chuyển đến Luyện tập…</h1>
+      <p>Nếu trình duyệt không tự chuyển, bấm vào đây: <a href="practice.html">Mở phần Luyện tập</a>.</p>
+    </div>
+  </div>
 </body>
 </html>
